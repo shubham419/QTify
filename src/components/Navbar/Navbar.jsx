@@ -9,7 +9,7 @@ const navbar = () => {
     <nav className={style.navbar}>
       <Logo />
       <Search  placeholder='Search a song of your choice'/>
-      <Button  text="Give feedback"/>
+      <Button  text="Give Feedback"/>
     </nav>
   )
 }
