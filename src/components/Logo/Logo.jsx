@@ -6,6 +6,7 @@ const Logo = () => {
   return (
     <img className={style.logo} src={logo} alt='logo' width={67}/>
   )
+  
 }
 
 export default Logo
