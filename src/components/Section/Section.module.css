@@ -1,0 +1,21 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+
+    & p{
+        font-weight: 600;
+    }
+
+    &  button{
+        background-color: var(--color-black);
+        color: var(--color-primary);
+    }
+
+}
+
+.cards{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+}

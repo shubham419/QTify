@@ -12,7 +12,7 @@ const navbar = () => {
       </a>
 
       <Search placeholder="Search a song of your choice" />
-      <Button text="Give Feedback" />
+      <Button>Give Feedback</Button>
     </nav>
   );
 };

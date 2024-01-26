@@ -2,7 +2,7 @@ import React from "react";
 import { Tooltip, Chip } from "@mui/material";
 import style from "./Card.module.css";
 
-export const Card = ({ data, type }) => {
+const Card = ({ data, type }) => {
   const getCard = (type) => {
     switch (type) {
       case "album": {
@@ -36,3 +36,6 @@ export const Card = ({ data, type }) => {
 
   return getCard(type);
 };
+
+
+export default Card;
