@@ -7,10 +7,8 @@ import styles from './Carousel.module.css';
 const CarouselLeftNavigation = () => {
     const swiper = useSwiper();
     const [isBegining, setIsBegining] = useState(swiper.isBeginning);
-    console.log("is Begining ==>",isBegining);
 
     useEffect(() => {
-      console.log("inside left navigation")
         swiper.on('slideChange', () => {
             setIsBegining(swiper.isBeginning);
         })

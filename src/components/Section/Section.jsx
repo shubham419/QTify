@@ -3,8 +3,9 @@ import style from './Section.module.css';
 import Card from '../Card/Card';
 import { CircularProgress } from '@mui/material';
 import Carousel from '../Carousel/Carousel';
+import SongsTabs from '../Tabs/Tabs';
 
-const Sectiom = ({data, type, title}) => {
+const Sectiom = ({data, type, title, handleFilter}) => {
 
   console.log(data.length);
 
@@ -24,7 +25,7 @@ const Sectiom = ({data, type, title}) => {
           <h4 onClick={handleToggel} className={style.toggel_text}>{toggel ? "Collapse" : "Show all"}</h4>
 
         </div>
-
+        {type==='song'? <SongsTabs handleFilter={handleFilter} /> : null}
           {
             data.length === 0 ? (<CircularProgress />) : (
               <div className={style.cards_wrapper}>{

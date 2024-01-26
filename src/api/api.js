@@ -19,3 +19,12 @@ export  const fetchNewAlbum = async () => {
         console.error(e);
     }
 }
+
+export  const fetchSongs = async () => {
+    try{
+        const res = await axios(`${BACKEND_ENDPOINT}/songs`);
+        return res.data;
+    }catch (e){
+        console.error(e);
+    }
+}
