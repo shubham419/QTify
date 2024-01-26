@@ -1,0 +1,27 @@
+.card_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 205px;
+    width: 159px;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: var(--color-white);
+}
+
+.card_content img {
+    object-fit: cover;
+    height: 80%;
+    width: 100%;
+}
+
+.card_content button {
+    width: fit-content;
+    height: 23px;
+    margin: 0px 0px 6px 8px;
+    border: 0px;
+    border-radius: 10px;
+    background-color: var(--color-black);
+    color: var(--color-white);
+}
+
