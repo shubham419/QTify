@@ -12,11 +12,15 @@ export const Card = ({ data, type }) => {
             <div className={style.wrapper}>
               <div className={style.card}>
                 <img src={image} alt="album" />
-                <div>
-                <Chip label={`${follows} Follows`} size="small" className={style.chip}/>
+                <div className={style.banner}>
+                  <Chip
+                    label={`${follows} Follows`}
+                    size="small"
+                    className={style.chip}
+                  />
                 </div>
               </div>
-              <div className={style.title_wrapper}>  
+              <div className={style.title_wrapper}>
                 <p>{title}</p>
               </div>
             </div>
