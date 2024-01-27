@@ -2,20 +2,20 @@
     display: flex;
     justify-content: space-between;
     padding: 10px;
-
-    & p{
-        font-weight: 600;
-    }
-
-    &  button{
-        background-color: var(--color-black);
-        color: var(--color-primary);
-    }
-
+    align-items: baseline;
 }
 
-.cards{
+.toggel_text{
+    cursor: pointer;
+    color: var(--color-primary);    
+}
+
+.wrapper{
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
+}
+
+.cards_wrapper{
+    margin-top: 18px;
 }

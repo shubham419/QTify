@@ -1,33 +1,50 @@
-import React, {useState, useEffect} from 'react'
-import { fetchTopAlbum } from '../../api/api';
+import React, {useState} from 'react'
 import style from './Section.module.css';
 import Card from '../Card/Card';
+import { CircularProgress } from '@mui/material';
 
-const Sectiom = () => {
+const Sectiom = ({data, type, title}) => {
 
-    const[topAlbum, setTopAlbum] = useState([]);
+  console.log(data.length);
 
-    const getTopAlbum = async () => {
-      const topAlbum = await fetchTopAlbum();
-      setTopAlbum(topAlbum);
+    const [toggel, setToggel] = useState(true);
+
+    const handleToggel = () => {
+      setToggel(!toggel);
     }
+
   
-    useEffect(()=> {
-      getTopAlbum();
-    },[]);
 
   return (
     <div>
         <div className={style.header}>
-          <p>Top Albums</p>
+          <h3>{title}</h3>
           {/* <button>Show all</button> */}
-          <button>Collapse</button>
+          {/* <button>Collapse</button> */}
+
+          <h4 onClick={handleToggel} className={style.toggel_text}>{toggel ? "Collapse" : "Show all"}</h4>
+
         </div>
-        <div className={style.cards}>
-        {topAlbum.map((album) => {
-        return <Card data={album} type="album" key={album.id}/>
-      })}
-        </div>
+
+          {
+            data.length === 0 ? (<CircularProgress />) : (
+              <div className={style.cards_wrapper}>{
+                // toggel ? (<div className={style.wrapper}>
+                //     {data.map((card) => {
+                //      return <Card data={card} type={type} key={card.id}/>
+                //     })}
+                // </div>) : (<>hello</>)
+
+               <div className={style.wrapper}>
+                    {data.map((card) => {
+                     return <Card data={card} type={type} key={card.id}/>
+                    })}  
+                </div> 
+              }</div>
+            ) 
+            
+          }
+        
     </div>
   )
 }
