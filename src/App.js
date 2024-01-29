@@ -8,6 +8,7 @@ import { fetchTopAlbum } from './api/api';
 function App() {
 
   const[topAlbum, setTopAlbum] = useState([]);
+  const[newAlbum, setNewAlbum] = useState([]);
 
 
   const getTopAlbum = async () => {
@@ -15,8 +16,15 @@ function App() {
     setTopAlbum(topAlbum);
   }
 
+  const getNewAlbum = async () => {
+    const newAlbum = await fetchTopAlbum();
+    setNewAlbum(newAlbum);
+  }
+
+
   useEffect(()=> {
     getTopAlbum();
+    getNewAlbum();
   },[]);
 
   return (
@@ -24,6 +32,8 @@ function App() {
       <Navbar />
       <Hero />
      <Section data={topAlbum} title="Top Album" type="album"/>
+     <Section data={newAlbum} title="New Album" type="album"/>
+
     </div>
   );
 }

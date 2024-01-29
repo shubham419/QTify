@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import style from './Section.module.css';
 import Card from '../Card/Card';
 import { CircularProgress } from '@mui/material';
+import Carousel from '../Carousel/Carousel';
 
 const Sectiom = ({data, type, title}) => {
 
@@ -19,8 +20,6 @@ const Sectiom = ({data, type, title}) => {
     <div>
         <div className={style.header}>
           <h3>{title}</h3>
-          {/* <button>Show all</button> */}
-          {/* <button>Collapse</button> */}
 
           <h4 onClick={handleToggel} className={style.toggel_text}>{toggel ? "Collapse" : "Show all"}</h4>
 
@@ -29,17 +28,11 @@ const Sectiom = ({data, type, title}) => {
           {
             data.length === 0 ? (<CircularProgress />) : (
               <div className={style.cards_wrapper}>{
-                // toggel ? (<div className={style.wrapper}>
-                //     {data.map((card) => {
-                //      return <Card data={card} type={type} key={card.id}/>
-                //     })}
-                // </div>) : (<>hello</>)
-
-               <div className={style.wrapper}>
+                toggel ? (<div className={style.wrapper}>
                     {data.map((card) => {
                      return <Card data={card} type={type} key={card.id}/>
-                    })}  
-                </div> 
+                    })}
+                </div>) : (<Carousel data={data} renderComponent={(card) => <Card data={card} type={type} key={card.id}/>}/>)
               }</div>
             ) 
             

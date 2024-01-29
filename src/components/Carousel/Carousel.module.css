@@ -1,0 +1,15 @@
+.wrapper{
+    display: flex;
+}
+
+.card_wrapper{
+    display: flex;
+    background-color: aqua;
+}
+
+.left_nav{
+    position: absolute;
+}
+.right_nav{
+    position: absolute;
+}
