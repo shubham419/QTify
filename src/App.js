@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import Section from "./components/Section/Section";
-import { fetchTopAlbum } from "./api/api";
+import { fetchNewAlbum, fetchTopAlbum } from "./api/api";
 import styles from "./App.module.css";
 
 function App() {
@@ -15,7 +15,7 @@ function App() {
   };
 
   const getNewAlbum = async () => {
-    const newAlbum = await fetchTopAlbum();
+    const newAlbum = await fetchNewAlbum();
     setNewAlbum(newAlbum);
   };
 
