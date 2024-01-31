@@ -6,7 +6,6 @@ import styles from './Carousel.module.css';
 const CarouselRightNavigation = () => {
     const swiper = useSwiper();
     const [isEnd, setIsEnd] = useState(swiper.isEnd);
-    console.log("is end ==>",isEnd);
     useEffect(() => {
         swiper.on('slideChange', () => {
             setIsEnd(swiper.isEnd);

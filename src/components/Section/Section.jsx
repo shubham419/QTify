@@ -7,7 +7,6 @@ import SongsTabs from '../Tabs/Tabs';
 
 const Sectiom = ({data, type, title, handleFilter}) => {
 
-  console.log(data.length);
 
     const [toggel, setToggel] = useState(false);
 

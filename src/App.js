@@ -23,18 +23,17 @@ function App() {
   };
 
   const getSongs = async () => {
-    const songs = await fetchSongs();
-    setSongs(songs);
+    const data = await fetchSongs();
+    setSongs(data);
   }
-  console.log("hello");
-  console.log(songs);
+
 
   const filterSongs = (val) => {
       console.log(val);
       let key;
-      if(val == "0"){
+      if(val === 0){
         setFilteredSongsData(songs);
-          return;
+        return;
       }
       switch (val){
         case 1 :{
@@ -70,6 +69,10 @@ function App() {
     getNewAlbum();
     getSongs();
   }, []);
+
+  useEffect(() =>{
+    filterSongs(0);
+  } ,[songs])
 
   return (
     <div className="App">
