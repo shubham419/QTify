@@ -1,4 +1,4 @@
-import axios from "axios";
+ import axios from "axios";
 
 const BACKEND_ENDPOINT = "https://qtify-backend-labs.crio.do";
 

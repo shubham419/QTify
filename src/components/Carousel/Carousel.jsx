@@ -4,12 +4,13 @@ import CarouselLeftNavigation from './CarouselLeftNavigation';
 import { Navigation , Controller} from 'swiper/modules';
 import CarouselRightNavigation from './CarouselRightNavigation';
 import style from './Carousel.module.css';
+import 'swiper/css';
 
 
 const Controls = ({data}) => {
     const swiper = useSwiper();
     useEffect(()=> {
-        swiper.slideTo(0, 3000);
+        swiper.slideTo(0, null);
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[data]);
     return <></>
@@ -28,8 +29,8 @@ const Carousel = ({data, renderComponent}) => {
     slidesPerView="auto"
     >
         <Controls data={data} />
-        <CarouselLeftNavigation className={style.left_nav}/>
-        <CarouselRightNavigation  className={style.right_nav}/>
+        <CarouselLeftNavigation/>
+        <CarouselRightNavigation/>
         <div className={style.card_wrapper}>
         {
             data.map((card) => {

@@ -8,7 +8,7 @@ const Sectiom = ({data, type, title}) => {
 
   console.log(data.length);
 
-    const [toggel, setToggel] = useState(true);
+    const [toggel, setToggel] = useState(false);
 
     const handleToggel = () => {
       setToggel(!toggel);
