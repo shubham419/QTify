@@ -1,0 +1,26 @@
+.accordion_title_wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid var(--color-white);
+    border-radius: 10px;
+    padding: 24px 32px;
+    background-color: var(--color-black);
+    & svg {
+        width: auto;
+    }
+}
+
+.accordion_message_wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 32px;
+}
+
+.accordion_wrapper{
+    cursor: pointer;
+    margin-top: 24px;
+    background-color: var(--color-white);
+    border-radius: 10px;
+}

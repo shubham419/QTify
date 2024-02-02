@@ -2,14 +2,16 @@ import React, { useState, useEffect } from "react";
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import Section from "./components/Section/Section";
-import { fetchNewAlbum, fetchSongs, fetchTopAlbum } from "./api/api";
+import { fetchFaq, fetchNewAlbum, fetchSongs, fetchTopAlbum } from "./api/api";
 import styles from "./App.module.css";
+import FAQ from "./components/FAQ/FAQ";
 
 function App() {
   const [topAlbum, setTopAlbum] = useState([]);
   const [newAlbum, setNewAlbum] = useState([]);
   const [songs, setSongs] = useState([]);
   const [filteredSongsData, setFilteredSongsData] = useState([]);
+  const [faqData, setFaqData] = useState([]);
 
 
   const getTopAlbum = async () => {
@@ -27,6 +29,10 @@ function App() {
     setSongs(data);
   }
 
+  const getFaqData = async () => {
+    const data = await fetchFaq();
+    setFaqData(data.data); 
+  }
 
   const filterSongs = (val) => {
       console.log(val);
@@ -68,6 +74,7 @@ function App() {
     getTopAlbum();
     getNewAlbum();
     getSongs();
+    getFaqData();
   }, []);
 
   useEffect(() =>{
@@ -83,6 +90,11 @@ function App() {
         <Section data={newAlbum} title="New Album" type="album" />
         <Section data={filteredSongsData} title="Songs" type="song" handleFilter={filterSongs} />
       </div>
+
+      <div className={styles.faq_wrapper}>
+        <FAQ data={faqData}/>
+      </div>
+
     </div>
   );
 }
